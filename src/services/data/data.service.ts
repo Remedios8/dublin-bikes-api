@@ -50,7 +50,7 @@ export class DataService implements IDataService {
         for (const v of nonNull) {
             if (!isString(v) || isLikeDate(v) || isLikeBoolean(v)) break;
             dictionary.add(v.toLowerCase().trim());
-            if (dictionary.size > 6){
+            if (dictionary.size > 6) {
                 dictionary.clear();
                 break;
             }
@@ -82,7 +82,7 @@ export class DataService implements IDataService {
     public applyFilter(records: any[], filter: Filter): any[] {
         let filtered: any[] = [];
         const where = (filter && filter.where) || {};
-        for (const r of records.slice(0, 2)) {
+        for (const r of records) {
             for (const [key, value] of Object.entries(r)) {
                 let isCandidate = false;
                 for (const [fieldName, clause] of Object.entries(where)) {
@@ -96,6 +96,8 @@ export class DataService implements IDataService {
                         } else {
                             isCandidate = false;
                         }
+                    } else {
+                        isCandidate = false;
                     }
                 }
                 if (isCandidate) filtered.push(r);
