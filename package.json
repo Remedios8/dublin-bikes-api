@@ -1,0 +1,46 @@
+{
+  "name": "dublin-bikes-api",
+  "version": "0.0.1",
+  "description": "Dublin Bikes API",
+  "keywords": [
+    "node",
+    "typescript"
+  ],
+  "scripts": {
+    "start": "nodemon --watch src --ext ts --exec ts-node --ignore '*.test.ts' --delay 3 src/server.ts",
+    "prod:start": "node ./dist/server.js",
+    "compile": "tsc -p tsconfig.json",
+    "eslint": "eslint",
+    "lint": "npm run eslint -- \"src//*.ts\"",
+    "lint:fix": "npm run eslint -- --fix \"src//*.ts\"",
+    "build": "npm run compile"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "inversify": "^6.2.2",
+    "inversify-express-utils": "^6.5.0",
+    "lodash": "^4.17.21",
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.34.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/lodash": "^4.17.20",
+    "@typescript-eslint/eslint-plugin": "^8.40.0",
+    "@typescript-eslint/parser": "^8.40.0",
+    "eslint": "^9.34.0",
+    "globals": "^16.3.0",
+    "jiti": "^2.5.1",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.41.0"
+  },
+  "engines": {
+    "node": ">= 8",
+    "npm": ">= 3"
+  }
+}
